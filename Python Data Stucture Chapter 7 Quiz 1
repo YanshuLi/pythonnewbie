@@ -1,0 +1,13 @@
+# Python Data Stucture Chapter 7 Quiz 1
+
+# Use words.txt as the file name
+fname = input("Enter file name: ")
+
+try:
+    fh = open(fname)
+except:
+    print("File can not open: ", fname)
+
+for line in fh:
+    linefix = line.rstrip().upper()
+    print(linefix)
