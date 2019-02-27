@@ -1,0 +1,24 @@
+# Python Data Stucture Chapter 7 Quiz 2
+
+# Use the file name mbox-short.txt as the file name
+fname = input("Enter file name: ")
+try:
+    fh = open(fname)
+except:
+    print("File can not be opened: ", fname)
+
+average = 0
+linecount = 0
+
+for line in fh:
+    if not line.startswith("X-DSPAM-Confidence:") : continue
+    linefix = line.rstrip()
+    front = linefix.find(":") + 1
+    back = len(linefix)
+    numline = linefix[front:back + 1]
+    numline_fl = float(numline)
+    average = average + numline_fl
+    linecount = linecount + 1
+
+
+print("Average spam confidence: " + str(average/linecount))
