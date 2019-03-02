@@ -1,0 +1,36 @@
+fn = input("Enter file:")
+
+# open the file 
+try:
+    fh = open(fn)
+except:
+    print("Can't open file: ", fn)
+
+# create a list that has all the emails as items on the list
+# using words.apprend(line[1])
+
+words = list()
+
+for line in fh:
+    if not line.startswith('From '):
+         continue
+    line = line.rstrip().split()
+    words.append(line[1])
+
+# after the list is create, let the program go through the list
+# see which email showed up the most
+counts = dict()
+for word in words:
+    counts[word] = counts.get(word, 0) + 1
+
+mcount = None
+mword = None
+for word,count in counts.items():
+    if mcount is None or count > mcount:
+        mcount = count
+        mword = word
+
+# print out the result
+print(mword, mcount)
+
+# rememher don't include "" to print out key and value, unless a string needs to be printed.
