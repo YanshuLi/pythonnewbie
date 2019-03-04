@@ -1,0 +1,34 @@
+# answer to Python Data Stucture chapter 10 assignment 1:
+
+name = input("Enter file:")
+if len(name) < 1 : name = "mbox-short.txt"
+handle = open(name)
+
+#above lines were given
+#as a beginner, my code would be:
+#
+# try:
+# name = input("Enter file:")
+# except:
+# print("Can't open file::, name)
+#
+# handle = open(name)
+
+counts = dict()
+
+for line in handle:
+    if not line.startswith('From '):
+        continue
+    else:
+        time_sent = line.split()
+        time = time_sent[5]
+        hour = time.split(":")
+        counts[hour[0]] = counts.get(hour[0], 0) + 1
+
+list = list()
+for k, v in counts.items():
+    list.append( (k, v) )
+list.sort()
+
+for hour_sent, counts in list:
+    print(hour_sent, counts)
