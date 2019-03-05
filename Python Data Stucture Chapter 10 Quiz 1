@@ -10,7 +10,7 @@ handle = open(name)
 # try:
 # name = input("Enter file:")
 # except:
-# print("Can't open file::, name)
+# print("Can't open file:", name)
 #
 # handle = open(name)
 
