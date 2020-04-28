@@ -1,0 +1,69 @@
+# below is the code for the project on CODEACEDEMY boolean subject
+
+
+def ground_rate(weight):
+  if weight <= 2:
+    ground_cost = weight * 1.5 + 20;
+  elif weight <= 6:
+    ground_cost = weight * 3 + 20;
+  elif weight <= 10:
+    ground_cost = weight * 4 + 20;
+  else:
+    ground_cost = weight * 4.75 + 20;
+  return ground_cost;
+print(ground_rate(8.4))
+
+p_cost = 125
+
+def drone_rate(weight):
+  if weight <= 2:
+    drone_cost = weight * 4.5;
+  elif weight <= 6:
+    drone_cost = weight * 9;
+  elif weight <= 10:
+    drone_cost = weight * 12;
+  else:
+    drone_cost = weight * 14.25;
+  return drone_cost
+print(drone_rate(1.5))
+
+
+def compare_rates(weight):
+  ground = ground_rate(weight);
+  prm = p_cost;
+  drone = drone_rate(weight);
+  if ground < drone and ground < prm:
+    shipping = "ground shipping";
+    return shipping + " is the cheapeast when your package weights " + str(weight) + " lbs and it will cost " + str(ground) + " dollars." ;
+  if ground > drone and drone < prm:
+    shipping = "drone shipping";
+    return shipping + " is the cheapeast when you package weights " + str(weight) + " lbs and it will cost " + str(drone) + " dollars.";
+  if ground > prm and ground > prm:
+    shipping = "premium shipping";
+    return shipping + " is the cheapeast when you package weights " + str(weight) + " lbs and it will cost " + str(prm) + " dollars.";
+  else:
+     return "You can choose whatever you want";
+    
+print(compare_rates(4.8));
+print(compare_rates(41.5));
+print(compare_rates(28.5));
+print(compare_rates(10));
+print(compare_rates(15));    
+print(compare_rates(21));
+print(compare_rates(25));
+print(compare_rates(3));
+print(compare_rates(3.5));
+
+
+# print result as below
+# 53.6
+# 6.75
+# ground shipping is the cheapeast when your package weights 4.8 lbs and it will cost 34.4 dollars.
+# premium shipping is the cheapeast when you package weights 41.5 lbs and it will cost 125 dollars.
+# premium shipping is the cheapeast when you package weights 28.5 lbs and it will cost 125 dollars.
+# ground shipping is the cheapeast when your package weights 10 lbs and it will cost 60 dollars.
+# ground shipping is the cheapeast when your package weights 15 lbs and it will cost 91.25 dollars.
+# ground shipping is the cheapeast when your package weights 21 lbs and it will cost 119.75 dollars.
+# premium shipping is the cheapeast when you package weights 25 lbs and it will cost 125 dollars.
+# drone shipping is the cheapeast when you package weights 3 lbs and it will cost 27 dollars.
+# ground shipping is the cheapeast when your package weights 3.5 lbs and it will cost 30.5 dollars.
