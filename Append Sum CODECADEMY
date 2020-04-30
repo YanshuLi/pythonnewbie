@@ -1,0 +1,16 @@
+# this is the code for CODECADEMY's python code challenge Append Sum
+
+#Write your function here
+def append_sum(lst):
+  sum_of_last_two = lst[-1] + lst[-2]
+  lst.append(sum_of_last_two)
+  sum_of_last_two = lst[-1] + lst[-2]
+  lst.append(sum_of_last_two)
+  sum_of_last_two = lst[-1] + lst[-2]
+  lst.append(sum_of_last_two)
+  return lst
+  
+#Uncomment the line below when your function is done
+print(append_sum([1, 1, 2]))
+
+# it prints out [1, 1, 2, 3, 5, 8]
