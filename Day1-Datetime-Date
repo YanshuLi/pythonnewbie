@@ -1,0 +1,48 @@
+# programmed in Idle
+
+>>> from datetime import datetime
+>>> from datetime import date
+>>> 
+>>> 
+>>> datetime.today()
+datetime.datetime(2020, 6, 8, 22, 59, 35, 874719)
+
+>>> today = datetime.today()
+>>> type(today)
+<class 'datetime.datetime'>
+>>> 
+>>> todaydate = date.today()
+>>> 
+>>> type(todaydate)
+<class 'datetime.date'>
+>>> todaydate
+datetime.date(2020, 6, 8)
+
+>>> todaydate.month
+6
+
+>>> todaydate.day
+8
+>>> todaydate.year
+2020
+>>> 
+
+>>> christmas = date(2019, 12, 25)
+>>> 
+>>> christmas - todaydate
+datetime.timedelta(days=-166)
+>>> christmas = date(2020, 12, 25)
+>>> christmas - todaydate
+datetime.timedelta(days=200)
+
+>>> (christmas - todaydate).days
+200
+
+>>> 
+>>> if christmas is not todaydate:
+	print("Sorry there are still " + str((christmas - todaydate).days) + " days until Christmas!")
+else:
+	print("Yay it's today! Christmas day!")
+
+	
+Sorry there are still 200 days until Christmas!
