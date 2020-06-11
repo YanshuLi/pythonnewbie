@@ -1,0 +1,48 @@
+# CODECADEMY: Write a function that can censor a specific word or phrase from a body of text, and then return the text. Mr. Cloudy has asked you to use the function to censor all instances of the phrase learning algorithms from the first email, email_one. Mr. Cloudy doesn’t care how you censor it, he just wants it done.
+
+
+# USE XXXX.replace method to censor the targeted text and replace it with something wanted
+
+#for example
+
+
+#email_one is saved in a text file
+
+email_one = open("email_one.txt", "r").read()
+
+print(email_one)
+#this would print out "Good Morning, Board of Investors, 
+
+Progress is going great!
+
+We have made great strides in the last month improving the learning algorithms that the system has been using to acquire information. Now, the system is learning faster than ever and we are hard pressed to continue to find new information to feed it and sustain its growth.
+
+Soon, we'll expand the scope of the learning algorithms and connect the system with the internet. This will allow it to find and determine the information it needs to continue growing.
+
+Every month we come closer to achieving our goal of making the world a better place. Famine, plague, war, and poverty are all conquerable with the power of our system!
+
+Till next month,
+Francine, Head Scientist"
+
+#the function goes like:
+
+def censor_function(email):
+  censored_email = email.replace("learning algorithms", "XXXXXX XXXXXXX")
+  return censored_email
+ 
+#then emial_one will print out like:
+
+print(censor_function(email_one))
+
+"Good Morning, Board of Investors, 
+
+Progress is going great!
+
+We have made great strides in the last month improving the XXXXXX XXXXXXX that the system has been using to acquire information. Now, the system is learning faster than ever and we are hard pressed to continue to find new information to feed it and sustain its growth.
+
+Soon, we'll expand the scope of the XXXXXX XXXXXXX and connect the system with the internet. This will allow it to find and determine the information it needs to continue growing.
+
+Every month we come closer to achieving our goal of making the world a better place. Famine, plague, war, and poverty are all conquerable with the power of our system!
+
+Till next month,
+Francine, Head Scientist"
